@@ -5,7 +5,6 @@ Created on Fri Feb 26 08:55:32 2021
 @author: nelzman
 """
 
-
 # todo: selenium get person picture and info:
     
 from selenium import webdriver

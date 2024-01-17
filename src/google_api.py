@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import re
 import asyncio
-#from pygooglenews import GoogleNews
+#from pygooglenews import GoogleNews as pyGoogleNews
 from GoogleNews import GoogleNews
 
 
@@ -91,25 +91,18 @@ async def main():
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait([main()]))
-    
-    
-    
-from pygooglenews import GoogleNews
 
-gn = GoogleNews()#start='01/01/2020',end='12/31/2020')
+    # gn = pyGoogleNews()#start='01/01/2020',end='12/31/2020')
+    # gn.search('Coronavirus', from_ = '01/01/2020', to_ = '12/31/2020')
 
-gn.search('Coronavirus', from_ = '01/01/2020', to_ = '12/31/2020')
-    
-from GoogleNews import GoogleNews 
+    gn = GoogleNews(start='01/01/2018',end='12/31/2020')
+    gn.set_lang('de')
+    gn.search('Gühring')
+    result = gn.result()
+    df = pd.DataFrame(result)
+    print(df.head())
 
-gn = GoogleNews(start='01/01/2018',end='12/31/2020')
-gn.set_lang('de')
-gn.search('Gühring')
-result = gn.result()
-df = pd.DataFrame(result)
-display(df.head())
-
-for i in range(2,20):
-    gn.getpage(i)
-    result=gn.result()
-    df=pd.DataFrame(result)
+    for i in range(2,20):
+        gn.getpage(i)
+        result=gn.result()
+        df=pd.DataFrame(result)
