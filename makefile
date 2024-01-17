@@ -15,5 +15,5 @@ remove_environment:
 	conda env remove --name lead_profiler
 
 start_app: 
-	python -m lead_profiler_app
+	python -m src.lead_profiler_app
 

@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from lead_profile import LeadProfile
+from .lead_profile import LeadProfile
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
