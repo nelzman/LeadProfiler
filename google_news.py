@@ -2,14 +2,16 @@
 """
 Created on Wed Jan 13 13:04:02 2021
 
-@author: mnelz
+@author: nelzman
 """
 
 import numpy as np
 import pandas as pd
 import re
 import asyncio
-from pygooglenews import GoogleNews
+#from pygooglenews import GoogleNews
+from GoogleNews import GoogleNews
+
 
 class GoogleApi:
     

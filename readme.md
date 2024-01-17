@@ -6,5 +6,5 @@ conda env create -f LeadProfiler.yml
 
 Start App:
 - start cmd in Folder
-- conda activate LeadProfiler
-- python LeadProfilerApp.py
+- conda activate lead_profiler
+- python lead_profiler_app.py

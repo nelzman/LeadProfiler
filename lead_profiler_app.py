@@ -7,11 +7,12 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from lead_profile import LeadProfile
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1085, 1035)
+        MainWindow.resize(1600, 1200)
         MainWindow.setMouseTracking(False)
         
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -191,7 +192,6 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Info über den Lead:"))
 
     def searchLead(self):
-        from LeadProfile import LeadProfile
         
         name = self.LeadPreName.toPlainText() + ' ' + self.LeadPostName.toPlainText()
         company = self.LeadCompany.toPlainText() 

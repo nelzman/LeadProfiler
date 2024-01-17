@@ -1,0 +1,19 @@
+name: lead_profiler
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip:
+      - black==23.12.1
+      - dateparser==1.1.7
+      - googlenews==1.6.12
+      - lxml==5.1.0
+      - numpy==1.24.1
+      - pandas==1.5.3
+      - python-dateutil==2.8.2
+      - pyqt5==5.15.10
+      - regex==2022.10.31
+      - selenium==4.16.0
+      - setuptools==69.0.3 
+      - typing_extensions==4.9.0
+      - wikipedia==1.4.0
