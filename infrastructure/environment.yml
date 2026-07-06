@@ -12,5 +12,5 @@ dependencies:
       - requests
       - setuptools==69.0.3
       - typing_extensions==4.9.0
-      - pyqt5==5.15.10
+      - streamlit
       - wikipedia==1.4.0
