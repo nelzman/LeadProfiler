@@ -1,0 +1,7 @@
+pyqt5==5.15.10
+wikipedia==1.4.0
+GoogleNews==1.6.12
+lxml==5.1.0
+requests
+anthropic
+pytest
