@@ -61,9 +61,12 @@ Optional settings can be overridden via `~/.lead_profiler.json` (all keys option
 
 ## Running the app
 
+The frontend is a [Streamlit](https://streamlit.io/) web app — it opens in your
+browser (by default at http://localhost:8501).
+
 ```
 make start_app
-# or: python -m src.lead_profiler_app
+# or: streamlit run app.py
 ```
 
 ## Tests
@@ -73,20 +76,13 @@ make test
 # or: python -m pytest tests/ -v
 ```
 
-A headless GUI smoke test is also available (requires PyQt5 and a virtual display):
-
-```
-make smoke
-```
-
 ## Development notes
 
-- `src/lead_profiler_app.py` was originally generated from `src/LeadProfiler.ui` by
-  the PyQt5 UI code generator, but has since been hand-edited (business logic,
-  additional widgets, signal connections). **Do not regenerate it with `pyuic5`** —
-  doing so would discard those changes. `LeadProfiler.ui` is kept only as a
-  historical reference of the original layout; if you want to change the layout in
-  Qt Designer, you'll need to manually port the result back into the `.py` file.
+- The UI layer (`app.py`) is deliberately thin: it only renders. All research
+  logic lives in the Qt-free `src` package, with `src/research.py::gather_briefing`
+  orchestrating a full run and returning a `Briefing` plus per-section error
+  messages. This keeps the app testable without a browser (see
+  `tests/test_research.py`).
 - News search relies on scraping Google News (via the `GoogleNews` package), which
   is inherently fragile — Google may rate-limit or change its markup at any time.
   An empty news result is treated as normal, not an error.

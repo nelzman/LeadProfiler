@@ -15,11 +15,8 @@ remove_environment:
 	conda env remove --name lead_profiler
 
 start_app:
-	python -m src.lead_profiler_app
+	streamlit run app.py
 
 test:
 	python -m pytest tests/ -v
-
-smoke:
-	QT_QPA_PLATFORM=offscreen python -m tests.smoke_gui
 
